@@ -27,7 +27,7 @@ spec:
             - name: WORDPRESS_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-pass
+                  name: db-password
                   key: password
           ports:
             - containerPort: 80
@@ -42,4 +42,4 @@ spec:
       volumes:
         - name: wordpress-persistent-storage
           persistentVolumeClaim:
-            claimName: wp-pv-claim
+            claimName: wordpress-pvc

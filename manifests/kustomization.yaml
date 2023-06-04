@@ -1,11 +1,11 @@
 secretGenerator:
-  - name: mysql-pass
+  - name: db-password
     literals:
-      - password=pass
+      - password=password
 resources:
-  - wordpress/mariadb-pvc.yml
-  - wordpress/mariadb-deployment.yml
-  - wordpress/mariadb-svc.yml
+  - wordpress/db-pvc.yml
+  - wordpress/db-deployment.yml
+  - wordpress/db-svc.yml
   - wordpress/wordpress-pvc.yml
   - wordpress/wordpress-deployment.yml
   - wordpress/wordpress-svc.yml
