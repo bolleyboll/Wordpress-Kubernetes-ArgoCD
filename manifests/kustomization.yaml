@@ -1,0 +1,13 @@
+secretGenerator:
+  - name: mysql-pass
+    literals:
+      - password=pass
+resources:
+  - wordpress/mariadb-pvc.yml
+  - wordpress/mariadb-deployment.yml
+  - wordpress/mariadb-svc.yml
+  - wordpress/wordpress-pvc.yml
+  - wordpress/wordpress-deployment.yml
+  - wordpress/wordpress-svc.yml
+  - wordpress/wordpress-ingress.yml
+  
