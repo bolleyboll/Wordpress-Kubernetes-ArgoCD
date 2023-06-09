@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wordpress-helm-git
+  namespace: argo
+spec:
+  sources:
+    - repoURL: https://github.com/bolleyboll/Wordpress-Kubernetes-ArgoCD.git
+      targetRevision: HEAD
+      ref: myRepo
+    - repoURL: https://charts.bitnami.com/bitnami
+      targetRevision: 16.1.14
+      chart: wordpress
+      helm:
+        valueFiles:
+          - $myRepo/helm/wordpress.yml
+  destination:
+    namespace: wordpress-helm-git
+    server: https://kubernetes.default.svc
+  project: default
